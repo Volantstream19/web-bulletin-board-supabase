@@ -25,22 +25,55 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
-        <!-- add link for page specific css -->
     </head>
 
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Bulletin Board</p>
+            <p class="title">Add Post</p>
             <nav>
-                <a href="/add-post/post.html">Add Post</a>
+                <a href="/index.html">Bulletin Board</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <p id="error-display" class="error"></p>
-            <ul id="post-list"></ul>
+            <form id="post-form">
+                <label>
+                    <div>Event</div>
+                    <input name="name" required placeholder="What is the event..." />
+                </label>
+
+                <label>
+                    <div>Description</div>
+                    <textarea
+                        name="bio"
+                        required
+                        placeholder="This post is regarding..."
+                    ></textarea>
+                </label>
+
+                <label>
+                    <div>Contact</div>
+                    <input name="contact" placeholder="Leave your number here..." />
+                </label>
+
+                <label>
+                    <div>Photo</div>
+                    <input
+                        id="image-input"
+                        name="image"
+                        type="file"
+                        required
+                        placeholder="upload an image..."
+                    />
+                </label>
+                <img id="image-preview" name="image" src="/assets/dog.png" />
+
+                <button>Add Post</button>
+
+                <p id="error-display"></p>
+            </form>
         </main>
     </body>
 </html>
