@@ -1,4 +1,4 @@
-import { getUser, signOutUser } from '../bulletin-board/fetch-utils.js';
+import { getUser, signOutUser } from '../fetch-utils.js';
 
 // make sure we have a user!
 const user = getUser();
