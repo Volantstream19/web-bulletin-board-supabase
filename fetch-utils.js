@@ -27,19 +27,11 @@ export async function signOutUser() {
     return await client.auth.signOut();
 }
 
-/* Data functions */
-export async function uploadImage(bucketName, imagePath, imageFile) {
-    const bucket = client.storage.from(bucketName);
-    const response = await bucket.upload(imagePath, imageFile, {
-        cacheControl: '3600',
-        upsert: true,
-    });
-
-    if (response.error) {
-        console.log(response.error);
-        return null;
-    }
-
-    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
-    return url;
+export async function createPost(post) {
+    return await client.from('posts').insert(post);
 }
+
+export async function getPosts() {
+    return await client.from('posts').select('*').order('created_at', { ascending: false });
+}
+/* Data functions */
