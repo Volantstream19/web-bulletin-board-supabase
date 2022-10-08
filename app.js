@@ -31,6 +31,7 @@ function displayPosts() {
     postList.innerHtml = '';
 
     for (const post of posts) {
+        console.log(post);
         const postEl = renderPost(post);
         postList.append(postEl);
     }

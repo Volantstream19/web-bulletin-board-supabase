@@ -1,6 +1,9 @@
 export function renderPost(post) {
     const li = document.createElement('li');
 
+    const img = document.createElement('img');
+    img.src = post.image_url;
+
     const h2 = document.createElement('h2');
     h2.textContent = post.title;
 
@@ -10,6 +13,6 @@ export function renderPost(post) {
     const h3 = document.createElement('h3');
     h3.textContent = post.contact;
 
-    li.append(h2, p, h3);
+    li.append(img, h2, p, h3);
     return li;
 }
